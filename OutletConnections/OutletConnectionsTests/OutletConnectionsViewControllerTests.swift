@@ -13,7 +13,7 @@ final class OutletConnectionsViewControllerTests: XCTestCase {
 		let sut = OutletConnectionsViewController()
 		
 		sut.loadViewIfNeeded()
-		
+		//Asserting that there is a connection for both outlets.
 		XCTAssertNotNil(sut.label, "label")
 		XCTAssertNotNil(sut.button, "button")
 	}
