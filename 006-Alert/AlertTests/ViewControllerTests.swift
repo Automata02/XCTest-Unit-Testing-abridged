@@ -50,4 +50,12 @@ final class ViewControllerTests: XCTestCase {
 		
 		//assert something
 	}
+	
+	@MainActor func test_exectureAlertAction_withCancelButton() throws {
+		tap(sut.button)
+		
+		try alertVerifier.executeAction(forButton: "Cancel")
+		
+		//assert something
+	}
 }
