@@ -6,13 +6,26 @@
 //
 
 import XCTest
+import ViewControllerPresentationSpy
 @testable import Navigation
 
 final class ViewControllerTests: XCTestCase {
-	func test_tappingCodePushButton_shouldPushCodeNextViewController() {
+	private var sut: ViewController!
+	
+	override func setUp() {
+		super.setUp()
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let sut: ViewController = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
+		sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
 		sut.loadViewIfNeeded()
+	}
+	
+	override func tearDown() {
+		sut = nil
+		super.tearDown()
+	}
+	
+	
+	func test_tappingCodePushButton_shouldPushCodeNextViewController() {
 		let navigation = UINavigationController(rootViewController: sut)
 		tap(sut.codePushButton)
 		
@@ -22,11 +35,18 @@ final class ViewControllerTests: XCTestCase {
 		XCTAssertEqual(navigation.viewControllers.count, 2, "navigation stack")
 		
 		let pushedVC = navigation.viewControllers.last
-//		XCTAssertTrue(pushedVC is CodeNextViewController, "Expected CodeNextViewController, " + "but was \(String(describing: pushedVC))")
 		guard let codeNextVC = pushedVC as? CodeNextViewController else {
 			XCTFail("Expected CodeNextViewController, " + "but was \(String(describing: pushedVC))")
 			return
 		}
 		XCTAssertEqual(codeNextVC.label.text, "Push from code")
+	}
+	
+	@MainActor func test_tappingCodeModalButton_shouldPresentCodeNextViewController() {
+		let presentationVerifier = PresentationVerifier()
+		tap(sut.codeModalButton)
+
+		let codeNextVC: CodeNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+		XCTAssertEqual(codeNextVC?.label.text, "Modal from code")
 	}
 }

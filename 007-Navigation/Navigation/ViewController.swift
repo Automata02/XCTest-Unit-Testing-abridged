@@ -22,6 +22,10 @@ class ViewController: UIViewController {
 		let nextVC = CodeNextViewController(labelText: "Modal from code")
 		self.present(nextVC, animated: true)
 	}
+	
+	deinit {
+	print(">> ViewController.deinit")
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
