@@ -20,10 +20,10 @@ final class ViewControllerTests: XCTestCase {
 	}
 	
 	override func tearDown() {
+		executeRunLoop()
 		sut = nil
 		super.tearDown()
 	}
-	
 	
 	func test_tappingCodePushButton_shouldPushCodeNextViewController() {
 		let navigation = UINavigationController(rootViewController: sut)
@@ -49,4 +49,13 @@ final class ViewControllerTests: XCTestCase {
 		let codeNextVC: CodeNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
 		XCTAssertEqual(codeNextVC?.label.text, "Modal from code")
 	}
+	
+	@MainActor func test_tappingSeguePushButton_shouldShowSegueNextViewController() {
+		let presentationVerifier = PresentationVerifier()
+		putInWindow(sut)
+		tap(sut.seguePushButton)
+		let segueNextVC: SegueNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+		XCTAssertEqual(segueNextVC?.labelText, "Push from segue")
+	}
+	
 }
