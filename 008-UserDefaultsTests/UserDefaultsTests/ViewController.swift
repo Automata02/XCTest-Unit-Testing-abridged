@@ -16,18 +16,25 @@ class ViewController: UIViewController {
 		count += 1
 	}
 	
+	var userDefaults: UserDefaultsProtocol = UserDefaults.standard
+	
 	private var count = 0 {
 		didSet {
 			counterLabel.text = "\(count)"
-			UserDefaults.standard.set(count, forKey: "count")
+			userDefaults.set(count, forKey: "count")
 		}
 	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		count = UserDefaults.standard.integer(forKey: "count")
+		count = userDefaults.integer(forKey: "count")
 	}
-
-
 }
 
+
+protocol UserDefaultsProtocol {
+	func set(_ value: Int, forKey defaultName: String)
+	func integer(forKey defaultName: String) -> Int
+}
+
+extension UserDefaults: UserDefaultsProtocol {}
