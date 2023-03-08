@@ -9,12 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	@IBOutlet private(set) var button: UIButton!
+	var session: URLSessionProtocol = URLSession.shared
 	private var dataTask: URLSessionDataTask?
+	
+	@IBOutlet private(set) var button: UIButton!
 	
 	@IBAction private func buttonTapped() {
 		searchForBook(terms: "out from boneville")
 	}
+	
+	
 	
 
 	override func viewDidLoad() {
@@ -28,7 +32,7 @@ class ViewController: UIViewController {
 			  let url = URL(string: "https://itunes.apple.com/search?" +
 							"media=ebook&term=\(encodedTerms)") else { return }
 		let request = URLRequest(url: url)
-		dataTask = URLSession.shared.dataTask(with: request) {
+		dataTask = session.dataTask(with: request) {
 			[weak self] (data: Data?, response: URLResponse?, error: Error?)
 			-> Void in
 			guard let self = self else { return }
@@ -46,3 +50,8 @@ class ViewController: UIViewController {
 	}
 }
 
+extension URLSession: URLSessionProtocol {}
+
+protocol URLSessionProtocol {
+	func dataTask(with request: URLRequest, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void ) -> URLSessionDataTask
+}
