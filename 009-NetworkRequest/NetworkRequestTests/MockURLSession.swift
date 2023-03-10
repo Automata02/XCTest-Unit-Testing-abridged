@@ -4,7 +4,7 @@
 //
 //  Created by roberts.kursitis on 09/03/2023.
 //
-
+import XCTest
 import Foundation
 @testable import NetworkRequest
 
@@ -19,6 +19,11 @@ class MockURLSession: URLSessionProtocol {
 			dataTaskCallCount += 1
 			dataTaskArgsRequest.append(request)
 			return DummyURLSessionDataTask()
+	}
+	
+	func verifyDataTask(with request: URLRequest, file: StaticString = #file, line: UInt = #line) {
+		XCTAssertEqual(dataTaskCallCount, 1, "call count", file: file, line: line)
+		XCTAssertEqual(dataTaskArgsRequest.first, request, "request", file: file, line: line)
 	}
 }
 
