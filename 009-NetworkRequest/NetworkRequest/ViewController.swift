@@ -17,9 +17,6 @@ class ViewController: UIViewController {
 	@IBAction private func buttonTapped() {
 		searchForBook(terms: "out from boneville")
 	}
-	
-	
-	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

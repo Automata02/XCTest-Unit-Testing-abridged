@@ -36,6 +36,6 @@ final class ViewControllerTests: XCTestCase {
 //			url: URL(string: "https://itunes.apple.com/search?" +
 //			"media=ebook&term=out%20from%20boneville")!), "request")
 		mockURLSession.verifyDataTask(with: URLRequest(url: URL(string: "https://itunes.apple.com/search?" +
-																		"media=ebook&term=out%20from%20boneville")!))
+																"media=ebook&term=out%20from%20boneville")!))
 	}
 }
