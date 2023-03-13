@@ -1,13 +1,13 @@
 //
-//  NetworkResponseUITestsLaunchTests.swift
-//  NetworkResponseUITests
+//  NetworkRequestUITestsLaunchTests.swift
+//  NetworkRequestUITests
 //
-//  Created by roberts.kursitis on 10/03/2023.
+//  Created by roberts.kursitis on 07/03/2023.
 //
 
 import XCTest
 
-final class NetworkResponseUITestsLaunchTests: XCTestCase {
+final class NetworkRequestUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

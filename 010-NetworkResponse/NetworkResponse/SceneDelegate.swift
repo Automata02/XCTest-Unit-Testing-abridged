@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  NetworkResponse
+//  NetworkRequest
 //
-//  Created by roberts.kursitis on 10/03/2023.
+//  Created by roberts.kursitis on 07/03/2023.
 //
 
 import UIKit
