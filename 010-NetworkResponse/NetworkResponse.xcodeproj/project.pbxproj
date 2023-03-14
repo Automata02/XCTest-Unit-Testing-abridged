@@ -16,8 +16,11 @@
 		6C4178FA29B7532100CCC8EE /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4178F929B7532100CCC8EE /* ViewControllerTests.swift */; };
 		6C41790429B7532100CCC8EE /* NetworkRequestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41790329B7532100CCC8EE /* NetworkRequestUITests.swift */; };
 		6C41790629B7532100CCC8EE /* NetworkRequestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41790529B7532100CCC8EE /* NetworkRequestUITestsLaunchTests.swift */; };
-		6C41791329B9DB2400CCC8EE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41791229B9DB2400CCC8EE /* MockURLSession.swift */; };
 		6C41791529B9E39F00CCC8EE /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41791429B9E39F00CCC8EE /* TestHelpers.swift */; };
+		6CAF440029C068AF009C9127 /* SpyURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF43FF29C068AF009C9127 /* SpyURLSession.swift */; };
+		6CAF440229C0A422009C9127 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAF440129C0A422009C9127 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
+		6CAF440429C0A458009C9127 /* ViewControllerPresentationSpy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CAF440129C0A422009C9127 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
+		6CAF440629C0A502009C9127 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF440529C0A502009C9127 /* TestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6CAF440329C0A440009C9127 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				6CAF440429C0A458009C9127 /* ViewControllerPresentationSpy.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6C4178DF29B7531E00CCC8EE /* NetworkResponse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkResponse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4178E229B7531E00CCC8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,8 +67,10 @@
 		6C4178FF29B7532100CCC8EE /* NetworkResponseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkResponseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C41790329B7532100CCC8EE /* NetworkRequestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestUITests.swift; sourceTree = "<group>"; };
 		6C41790529B7532100CCC8EE /* NetworkRequestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6C41791229B9DB2400CCC8EE /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		6C41791429B9E39F00CCC8EE /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		6CAF43FF29C068AF009C9127 /* SpyURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyURLSession.swift; sourceTree = "<group>"; };
+		6CAF440129C0A422009C9127 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ViewControllerPresentationSpy.framework; sourceTree = "<group>"; };
+		6CAF440529C0A502009C9127 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CAF440229C0A422009C9127 /* ViewControllerPresentationSpy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,9 +136,11 @@
 		6C4178F829B7532100CCC8EE /* NetworkResponseTests */ = {
 			isa = PBXGroup;
 			children = (
+				6CAF440129C0A422009C9127 /* ViewControllerPresentationSpy.framework */,
 				6C4178F929B7532100CCC8EE /* ViewControllerTests.swift */,
-				6C41791229B9DB2400CCC8EE /* MockURLSession.swift */,
+				6CAF43FF29C068AF009C9127 /* SpyURLSession.swift */,
 				6C41791429B9E39F00CCC8EE /* TestHelpers.swift */,
+				6CAF440529C0A502009C9127 /* TestError.swift */,
 			);
 			path = NetworkResponseTests;
 			sourceTree = "<group>";
@@ -160,6 +181,7 @@
 				6C4178F129B7532100CCC8EE /* Sources */,
 				6C4178F229B7532100CCC8EE /* Frameworks */,
 				6C4178F329B7532100CCC8EE /* Resources */,
+				6CAF440329C0A440009C9127 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -274,7 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C41791329B9DB2400CCC8EE /* MockURLSession.swift in Sources */,
+				6CAF440629C0A502009C9127 /* TestError.swift in Sources */,
+				6CAF440029C068AF009C9127 /* SpyURLSession.swift in Sources */,
 				6C4178FA29B7532100CCC8EE /* ViewControllerTests.swift in Sources */,
 				6C41791529B9E39F00CCC8EE /* TestHelpers.swift in Sources */,
 			);
@@ -502,6 +525,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SH7598WJ8A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NetworkResponseTests",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -522,6 +549,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SH7598WJ8A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NetworkResponseTests",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
