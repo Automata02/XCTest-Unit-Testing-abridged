@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C7A374D29C463190003073E /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A374C29C463190003073E /* TestHelpers.swift */; };
 		6CAF441429C1E62A009C9127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF441329C1E62A009C9127 /* AppDelegate.swift */; };
 		6CAF441629C1E62A009C9127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF441529C1E62A009C9127 /* SceneDelegate.swift */; };
 		6CAF441829C1E62A009C9127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF441729C1E62A009C9127 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C7A374C29C463190003073E /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		6CAF441029C1E629009C9127 /* TextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAF441329C1E62A009C9127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CAF441529C1E62A009C9127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				6CAF442A29C1E62F009C9127 /* TextFieldTests.swift */,
+				6C7A374C29C463190003073E /* TestHelpers.swift */,
 			);
 			path = TextFieldTests;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CAF442B29C1E62F009C9127 /* TextFieldTests.swift in Sources */,
+				6C7A374D29C463190003073E /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

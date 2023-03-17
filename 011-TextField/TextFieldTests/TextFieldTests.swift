@@ -23,6 +23,13 @@ final class TextFieldTests: XCTestCase {
 		super.tearDown()
 	}
 	
+	func test_passwordField_attributesShouldBeSet() {
+		let textField = sut.passwordField!
+		XCTAssertEqual(textField.textContentType, .password, "textContentType")
+		XCTAssertEqual(textField.returnKeyType, .go, "returnKeyType")
+		XCTAssertTrue(textField.isSecureTextEntry, "isSecureTextEntry")
+	}
+	
 	func test_usernameTextField_attributesShouldBeSet() {
 		let textField = sut.usernameField!
 		XCTAssertEqual(textField.textContentType, .username, "textContentType")
