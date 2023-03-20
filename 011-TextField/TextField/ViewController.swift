@@ -17,6 +17,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		// Do any additional setup after loading the view.
 	}
 	
+	deinit {
+		print("ViewController.deinit")
+	}
+	
 	//prevents user from entering spaces in to the textfield
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
 				   replacementString string: String) -> Bool { if textField === usernameField {

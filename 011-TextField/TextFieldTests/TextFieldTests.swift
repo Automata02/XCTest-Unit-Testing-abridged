@@ -19,9 +19,35 @@ final class TextFieldTests: XCTestCase {
 	}
 	
 	override func tearDown() {
+		executeRunLoop()
+		//using runLoop to help remove ViewControllers that stay alive past the end of all tests.
 		sut = nil
 		super.tearDown()
 	}
+	
+	func test_shouldReturn_withPassword_shouldDismissKeyboard() {
+		putInViewHierarchy(sut)
+		sut.passwordField.becomeFirstResponder()
+		XCTAssertTrue(sut.passwordField.isFirstResponder, "precindition")
+		
+		shouldReturn(in: sut.passwordField)
+		
+		XCTAssertFalse(sut.passwordField.isFirstResponder)
+	}
+	
+	func test_shouldReturn_withUsername_shouldMoveInputFocusToPassword() {
+		putInViewHierarchy(sut)
+		shouldReturn(in: sut.usernameField)
+		
+		XCTAssertTrue(sut.passwordField.isFirstResponder)
+	}
+	
+//	func test_shouldReturn_withPassword_shouldPerformLogin() {
+//		sut.usernameField.text = "USERNAME"
+//		sut.passwordField.text = "PASSWORD"
+//
+//		shouldReturn(in: sut.passwordField)
+//	}
 	
 	func test_shouldChangeCharacters_passwordWithSpaces_shouldAllowChange() {
 		let allowChange = shouldChangeCharacters(in: sut.passwordField, replacement: "a b")
