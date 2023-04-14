@@ -34,6 +34,65 @@ final class ChangePasswordViewControllerTests: XCTestCase {
     }
     //MARK: Behavior tests
     
+    func test_tappingSubmit_withValidFields_shouldClearBackgroundColorForBlur() {
+        setUpValidPasswordEntries()
+        XCTAssertNotEqual(sut.view.backgroundColor, .clear, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertEqual(sut.view.backgroundColor, .clear)
+    }
+    
+    func test_tappingSubmit_withValidFields_shouldStartActivityAnimation() {
+        setUpValidPasswordEntries()
+        XCTAssertFalse(sut.activityIndicator.isAnimating, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertTrue(sut.activityIndicator.isAnimating)
+    }
+    
+    func test_tappingSubmit_withValidFields_shouldShowActivityIndicator() {
+        setUpValidPasswordEntries()
+        XCTAssertNil(sut.activityIndicator.superview, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertTrue(sut.activityIndicator.isAnimating)
+    }
+    
+    func test_tappingSubmit_withValidFields_shouldShowBlurView() {
+        setUpValidPasswordEntries()
+        XCTAssertNil(sut.blurView.superview, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertNotNil(sut.blurView.superview)
+    }
+    
+    func test_tappingSubmit_withValidFields_shouldDisableCancelBarButton() {
+        setUpValidPasswordEntries()
+        XCTAssertTrue(sut.cancelBarButton.isEnabled, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertFalse(sut.cancelBarButton.isEnabled)
+    }
+    
+    func test_tappingSubmit_withValidFieldsFocusedOnConfirmPassword_resignsFocus() {
+        setUpValidPasswordEntries()
+        putFocusOn(textField: sut.confirmPasswordTextField)
+        XCTAssertTrue(sut.confirmPasswordTextField.isFirstResponder, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertFalse(sut.confirmPasswordTextField.isFirstResponder)
+    }
+    
+    func test_tappingSubmit_withValidFieldsFocusedOnNewPassword_resignsFocus() {
+        setUpValidPasswordEntries()
+        putFocusOn(textField: sut.newPasswordTextField)
+        XCTAssertTrue(sut.newPasswordTextField.isFirstResponder, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertFalse(sut.newPasswordTextField.isFirstResponder)
+    }
+    
+    func test_tappingSubmit_withValidFieldsFocusedOnOldPassword_resignsFocus() {
+        setUpValidPasswordEntries()
+        putFocusOn(textField: sut.oldPasswordTextField)
+        XCTAssertTrue(sut.oldPasswordTextField.isFirstResponder, "precondition")
+        tapTap(sut.submitButton)
+        XCTAssertFalse(sut.oldPasswordTextField.isFirstResponder)
+    }
+    
     @MainActor func test_tappingSubmit_withCOnfirmationMismatch_shouldShowMismatchAlert() {
         setUpMismatchedConfirmationEntry()
         tapTap(sut.submitButton)
