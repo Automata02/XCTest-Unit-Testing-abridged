@@ -15,6 +15,16 @@ final class MockPasswordChanger: PasswordChanging {
     private var changeArgsOnSuccess: [() -> Void] = []
     private var changeArgsOnFailure: [(String) -> Void] = []
     
+    func changeCallSuccess(file: StaticString = #file, line: UInt = #line) {
+        guard changeWasCalledOnce(file: file, line: line) else { return }
+        changeArgsOnSuccess.last!()
+    }
+    
+    func changeCallFailure(message: String, file: StaticString = #file, line: UInt = #line) {
+        guard changeWasCalledOnce(file: file, line: line) else { return }
+        changeArgsOnFailure.last!(message)
+    }
+    
     func change(securityToken: String, oldPassword: String, newPassword: String, onSuccess: @escaping () -> Void, onFailure: @escaping (String) -> Void) {
         changeCallCount += 1
         changeArgsSecurityToken.append(securityToken)
