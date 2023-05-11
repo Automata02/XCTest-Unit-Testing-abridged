@@ -34,6 +34,41 @@ final class ChangePasswordViewControllerTests: XCTestCase {
     }
     //MARK: Behavior tests
     
+    //MARK: Testing hitting return key from different textFields
+    //asserting delegates are connected before testing
+    func test_textFieldDelegates_shouldBeConnected() {
+        XCTAssertNotNil(sut.oldPasswordTextField.delegate, "oldPasswordTextField")
+        XCTAssertNotNil(sut.newPasswordTextField.delegate, "newPasswordTextField")
+        XCTAssertNotNil(sut.confirmPasswordTextField.delegate, "confirmPasswordTextField")
+    }
+    
+    func test_hittingReturnFromConfirmPassword_shouldRequestPasswordChange() {
+        sut.securityToken = "TOKEN"
+        sut.oldPasswordTextField.text = "OLD456"
+        sut.newPasswordTextField.text = "NEW456"
+        sut.confirmPasswordTextField.text = sut.newPasswordTextField.text
+        
+        shouldReturn(in: sut.confirmPasswordTextField)
+        
+        passwordChanger.verifyChange(
+            securityToken: "TOKEN",
+            oldPassword: "OLD456",
+            newPassword: "NEW456")
+    }
+    
+    func test_hittingReturnFromOldPassword_shouldNotRequestPasswordChange() {
+        setUpValidPasswordEntries()
+        shouldReturn(in: sut.oldPasswordTextField)
+        passwordChanger.verifyChangeNeverCalled()
+    }
+    
+    func test_hittingReturnFromNewPassword_shouldNotRequestPasswordChange() {
+        setUpValidPasswordEntries()
+        shouldReturn(in: sut.newPasswordTextField)
+        passwordChanger.verifyChangeNeverCalled()
+    }
+    
+    //MARK: Tapping OK in Failure Alert
     @MainActor func test_tappingOKInFailureAlert_shouldNotDismissModal() throws {
         showPasswordChangeFailureAlert()
         let dismissalVerifier = DismissalVerifier()
@@ -99,6 +134,7 @@ final class ChangePasswordViewControllerTests: XCTestCase {
         verifyAlertPresented(title: "", message: "MESSAGE")
     }
     
+    //MARK: Tapping OK in Success Alert
     @MainActor func test_changePasswordSuccess_shouldShowSuccessAlert() {
         setUpValidPasswordEntries()
         tapTap(sut.submitButton)
@@ -115,6 +151,7 @@ final class ChangePasswordViewControllerTests: XCTestCase {
         dismissalVerifier.verify(animated: true, dismissedViewController: sut)
     }
     
+    //MARK: Activity Indicator Tests
     func test_changePasswordFailure_shouldStopActivityIndicatorAnimation() {
         setUpValidPasswordEntries()
         tapTap(sut.submitButton)
@@ -147,6 +184,7 @@ final class ChangePasswordViewControllerTests: XCTestCase {
         XCTAssertNil(sut.activityIndicator.superview)
     }
     
+    //MARK: Tapping Submit with Valid textFields
     func test_tappingSubmit_withValidFields_shouldRequestChangePassword() {
         sut.securityToken = "TOKEN"
         sut.oldPasswordTextField.text = "OLD456"
@@ -216,7 +254,8 @@ final class ChangePasswordViewControllerTests: XCTestCase {
         XCTAssertFalse(sut.oldPasswordTextField.isFirstResponder)
     }
     
-    @MainActor func test_tappingSubmit_withCOnfirmationMismatch_shouldShowMismatchAlert() {
+    //MARK: Tapping Submit with mismatched textFields
+    @MainActor func test_tappingSubmit_withConfirmationMismatch_shouldShowMismatchAlert() {
         setUpMismatchedConfirmationEntry()
         tapTap(sut.submitButton)
         verifyAlertPresented(title: "", message: "The new password and the confirmation password " + "don’t match. Please try again.")
@@ -234,6 +273,7 @@ final class ChangePasswordViewControllerTests: XCTestCase {
         sut.confirmPasswordTextField.text = "abcdef"
     }
     
+    //MARK: Password length tests
     @MainActor func test_tappingOKInTooShortAlert_shouldPutFocusOnNewPassword() throws {
         setUpEntriesNewPasswordTooShort()
         tapTap(sut.submitButton)

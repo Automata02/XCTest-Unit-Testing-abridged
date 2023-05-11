@@ -13,6 +13,7 @@
 		610C9EB029DEDD5F003B9477 /* MockPasswordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C9EAF29DEDD5F003B9477 /* MockPasswordChange.swift */; };
 		610C9EB629E57BC8003B9477 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610C9EB529E57BC8003B9477 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
 		610C9EB729E57BD2003B9477 /* ViewControllerPresentationSpy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 610C9EB529E57BC8003B9477 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
+		6193B9542A0CE63B00EFA38A /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6193B9532A0CE63B00EFA38A /* Notes.rtf */; };
 		61A721BB29DEAA55005E4384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721BA29DEAA55005E4384 /* AppDelegate.swift */; };
 		61A721BD29DEAA55005E4384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721BC29DEAA55005E4384 /* SceneDelegate.swift */; };
 		61A721BF29DEAA55005E4384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721BE29DEAA55005E4384 /* ViewController.swift */; };
@@ -20,19 +21,10 @@
 		61A721C429DEAA56005E4384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A721C329DEAA56005E4384 /* Assets.xcassets */; };
 		61A721C729DEAA56005E4384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A721C529DEAA56005E4384 /* LaunchScreen.storyboard */; };
 		61A721D229DEAA56005E4384 /* ChangePasswordViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721D129DEAA56005E4384 /* ChangePasswordViewControllerTests.swift */; };
-		61A721DC29DEAA56005E4384 /* RefactoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721DB29DEAA56005E4384 /* RefactoringUITests.swift */; };
-		61A721DE29DEAA56005E4384 /* RefactoringUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721DD29DEAA56005E4384 /* RefactoringUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		61A721CE29DEAA56005E4384 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 61A721AF29DEAA55005E4384 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 61A721B629DEAA55005E4384;
-			remoteInfo = Refactoring;
-		};
-		61A721D829DEAA56005E4384 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 61A721AF29DEAA55005E4384 /* Project object */;
 			proxyType = 1;
@@ -60,6 +52,7 @@
 		610C9EAD29DEDC28003B9477 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		610C9EAF29DEDD5F003B9477 /* MockPasswordChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPasswordChange.swift; sourceTree = "<group>"; };
 		610C9EB529E57BC8003B9477 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ViewControllerPresentationSpy.framework; sourceTree = "<group>"; };
+		6193B9532A0CE63B00EFA38A /* Notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		61A721B729DEAA55005E4384 /* Refactoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Refactoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A721BA29DEAA55005E4384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A721BC29DEAA55005E4384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,9 +63,6 @@
 		61A721C829DEAA56005E4384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61A721CD29DEAA56005E4384 /* RefactoringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactoringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A721D129DEAA56005E4384 /* ChangePasswordViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewControllerTests.swift; sourceTree = "<group>"; };
-		61A721D729DEAA56005E4384 /* RefactoringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactoringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61A721DB29DEAA56005E4384 /* RefactoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoringUITests.swift; sourceTree = "<group>"; };
-		61A721DD29DEAA56005E4384 /* RefactoringUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoringUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +81,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61A721D429DEAA56005E4384 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -106,7 +89,6 @@
 			children = (
 				61A721B929DEAA55005E4384 /* Refactoring */,
 				61A721D029DEAA56005E4384 /* RefactoringTests */,
-				61A721DA29DEAA56005E4384 /* RefactoringUITests */,
 				61A721B829DEAA55005E4384 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,7 +98,6 @@
 			children = (
 				61A721B729DEAA55005E4384 /* Refactoring.app */,
 				61A721CD29DEAA56005E4384 /* RefactoringTests.xctest */,
-				61A721D729DEAA56005E4384 /* RefactoringUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +110,7 @@
 				61A721BE29DEAA55005E4384 /* ViewController.swift */,
 				610C9EA929DEC7F2003B9477 /* PasswordChanger.swift */,
 				610C9EAB29DECC42003B9477 /* ChangePasswordViewController.swift */,
+				6193B9532A0CE63B00EFA38A /* Notes.rtf */,
 				61A721C029DEAA55005E4384 /* Main.storyboard */,
 				61A721C329DEAA56005E4384 /* Assets.xcassets */,
 				61A721C529DEAA56005E4384 /* LaunchScreen.storyboard */,
@@ -146,15 +128,6 @@
 				610C9EAD29DEDC28003B9477 /* TestHelpers.swift */,
 			);
 			path = RefactoringTests;
-			sourceTree = "<group>";
-		};
-		61A721DA29DEAA56005E4384 /* RefactoringUITests */ = {
-			isa = PBXGroup;
-			children = (
-				61A721DB29DEAA56005E4384 /* RefactoringUITests.swift */,
-				61A721DD29DEAA56005E4384 /* RefactoringUITestsLaunchTests.swift */,
-			);
-			path = RefactoringUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,24 +169,6 @@
 			productReference = 61A721CD29DEAA56005E4384 /* RefactoringTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		61A721D629DEAA56005E4384 /* RefactoringUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 61A721E729DEAA56005E4384 /* Build configuration list for PBXNativeTarget "RefactoringUITests" */;
-			buildPhases = (
-				61A721D329DEAA56005E4384 /* Sources */,
-				61A721D429DEAA56005E4384 /* Frameworks */,
-				61A721D529DEAA56005E4384 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				61A721D929DEAA56005E4384 /* PBXTargetDependency */,
-			);
-			name = RefactoringUITests;
-			productName = RefactoringUITests;
-			productReference = 61A721D729DEAA56005E4384 /* RefactoringUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -228,10 +183,6 @@
 						CreatedOnToolsVersion = 14.3;
 					};
 					61A721CC29DEAA56005E4384 = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 61A721B629DEAA55005E4384;
-					};
-					61A721D629DEAA56005E4384 = {
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 61A721B629DEAA55005E4384;
 					};
@@ -252,7 +203,6 @@
 			targets = (
 				61A721B629DEAA55005E4384 /* Refactoring */,
 				61A721CC29DEAA56005E4384 /* RefactoringTests */,
-				61A721D629DEAA56005E4384 /* RefactoringUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6193B9542A0CE63B00EFA38A /* Notes.rtf in Resources */,
 				61A721C729DEAA56005E4384 /* LaunchScreen.storyboard in Resources */,
 				61A721C429DEAA56005E4384 /* Assets.xcassets in Resources */,
 				61A721C229DEAA55005E4384 /* Main.storyboard in Resources */,
@@ -269,13 +220,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		61A721CB29DEAA56005E4384 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61A721D529DEAA56005E4384 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,15 +251,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61A721D329DEAA56005E4384 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				61A721DC29DEAA56005E4384 /* RefactoringUITests.swift in Sources */,
-				61A721DE29DEAA56005E4384 /* RefactoringUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -323,11 +258,6 @@
 			isa = PBXTargetDependency;
 			target = 61A721B629DEAA55005E4384 /* Refactoring */;
 			targetProxy = 61A721CE29DEAA56005E4384 /* PBXContainerItemProxy */;
-		};
-		61A721D929DEAA56005E4384 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 61A721B629DEAA55005E4384 /* Refactoring */;
-			targetProxy = 61A721D829DEAA56005E4384 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -565,40 +495,6 @@
 			};
 			name = Release;
 		};
-		61A721E829DEAA56005E4384 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.something.RefactoringUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Refactoring;
-			};
-			name = Debug;
-		};
-		61A721E929DEAA56005E4384 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.something.RefactoringUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Refactoring;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -625,15 +521,6 @@
 			buildConfigurations = (
 				61A721E529DEAA56005E4384 /* Debug */,
 				61A721E629DEAA56005E4384 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		61A721E729DEAA56005E4384 /* Build configuration list for PBXNativeTarget "RefactoringUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				61A721E829DEAA56005E4384 /* Debug */,
-				61A721E929DEAA56005E4384 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,6 +7,10 @@
 
 import XCTest
 
+@discardableResult func shouldReturn(in textField: UITextField) -> Bool? {
+    textField.delegate?.textFieldShouldReturn?(textField)
+}
+
 func verifyMethodCalledOnce(methodName: String, callCount: Int, describeArguments: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) -> Bool {
     if callCount == 0 {
         XCTFail("Wanted but not invoked: \(methodName)", file: file, line: line)
