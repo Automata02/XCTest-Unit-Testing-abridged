@@ -20,6 +20,13 @@ struct ChangePasswordViewModel {
     var newPassword: String = ""
     var confirmPassword: String = ""
     
+    var isOldPasswordEmpty: Bool { oldPassword.isEmpty }
+    var isNewPasswordEmpty: Bool { newPassword.isEmpty }
+    var isNewPasswordTooShort: Bool { newPassword.count < 6 }
+    var isConfirmPasswordMismatched: Bool {
+        newPassword != confirmPassword
+    }
+    
     var isCancelButtonEnabled: Bool = true
     var isBlurViewShowing: Bool = false
     var isActivityIndicatorShowing: Bool = false

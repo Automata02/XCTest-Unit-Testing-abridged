@@ -176,40 +176,36 @@ class ChangePasswordViewController: UIViewController {
     }
     
     private func validateInputs() -> Bool {
-        let okAction: (UIAlertAction) -> Void = { [weak self] _ in self?.newPasswordTextField.becomeFirstResponder() }
-        
-        if oldPasswordTextField.text?.isEmpty ?? true {
-            oldPasswordTextField.becomeFirstResponder()
+        if viewModel.isOldPasswordEmpty {
+            viewModel.inputFocus = .oldPassword
             return false
         }
         
-        if newPasswordTextField.text?.isEmpty ?? true {
-            showAlert(message: viewModel.message(.enterNew), okAction: okAction)
+        if viewModel.isNewPasswordEmpty {
+            showAlert(message: viewModel.message(.enterNew)) { [weak self] _ in
+                self?.viewModel.inputFocus = .newPassword
+            }
             return false
         }
         
-        if newPasswordTextField.text?.count ?? 0 < 6 {
-            showAlert(message: viewModel.message(.tooShort), okAction: okAction)
-            resetNewPasswords()
+        if viewModel.isNewPasswordTooShort {
+            showAlert(message: viewModel.message(.tooShort)) { [weak self] _ in
+                self?.resetNewPasswords()
+            }
             return false
         }
         
-        if newPasswordTextField.text != confirmPasswordTextField.text {
-            showAlert(message: viewModel.message(.mismatch), okAction: okAction)
-            resetNewPasswords()
-        return false
+        if viewModel.isConfirmPasswordMismatched {
+            showAlert(message: viewModel.message(.mismatch)) { [weak self] _ in
+                self?.resetNewPasswords()
+            }
+            return false
         }
-        
         return true
     }
 }
 
 extension ChangePasswordViewController: UITextFieldDelegate {
-    private func hideSpinner() {
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.removeFromSuperview()
-    }
-    
     private func textFieldsShouldReturn(_ textField: UITextField) -> Bool {
         if textField === oldPasswordTextField {
             newPasswordTextField.becomeFirstResponder()
@@ -235,7 +231,7 @@ extension ChangePasswordViewController: UITextFieldDelegate {
     private func resetNewPasswords() {
         newPasswordTextField.text = ""
         confirmPasswordTextField.text = ""
-        newPasswordTextField.becomeFirstResponder()
+        viewModel.inputFocus = .newPassword
     }
     
     private func showAlert(message: String,
