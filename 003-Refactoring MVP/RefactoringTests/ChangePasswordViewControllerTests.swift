@@ -377,9 +377,9 @@ final class ChangePasswordViewControllerTests: XCTestCase {
         dismissalVerifier.verify(animated: true, dismissedViewController: sut)
     }
     
-    private func putFocusOn(_ inputFocus: ChangePasswordViewModel.InputFocus) {
+    private func putFocusOn(_ inputFocus: InputFocus) {
         putInViewHierarchy(sut)
-        sut.viewModel.inputFocus = inputFocus
+        sut.updateInputFocus(inputFocus)
     }
     
     func test_tappingCancel_withFocusOnOldPassword_shouldResignThatFocus() {

@@ -32,15 +32,6 @@ struct ChangePasswordViewModel {
     var isActivityIndicatorShowing: Bool = false
     
     let successMessage: String = "Your password has been successfully changed."
-    
-    var inputFocus: InputFocus = .noKeyboard
-    
-    enum InputFocus {
-        case noKeyboard
-        case oldPassword
-        case newPassword
-        case confirmPassword
-    }
 
     func message(_ type: Message) -> String {
         type.message
