@@ -15,18 +15,7 @@ struct ChangePasswordViewModel {
     let newPasswordPlaceholder: String = "New Password"
     let confirmPasswordPlaceholder: String = "Confirm New Password"
     let submitButtonLabel: String = "Submit"
-    
-    var oldPassword: String = ""
-    var newPassword: String = ""
-    var confirmPassword: String = ""
-    
-    var isOldPasswordEmpty: Bool { oldPassword.isEmpty }
-    var isNewPasswordEmpty: Bool { newPassword.isEmpty }
-    var isNewPasswordTooShort: Bool { newPassword.count < 6 }
-    var isConfirmPasswordMismatched: Bool {
-        newPassword != confirmPassword
-    }
-    
+
     var isCancelButtonEnabled: Bool = true
     var isBlurViewShowing: Bool = false
     var isActivityIndicatorShowing: Bool = false

@@ -17,6 +17,7 @@
 		6193B9562A0D074900EFA38A /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6193B9552A0D074900EFA38A /* ChangePasswordViewModel.swift */; };
 		6193B9582A1B7C9B00EFA38A /* ChangePasswordViewCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6193B9572A1B7C9B00EFA38A /* ChangePasswordViewCommands.swift */; };
 		6193B95A2A1B7D8600EFA38A /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6193B9592A1B7D8600EFA38A /* ChangePasswordPresenter.swift */; };
+		6193B95C2A1BA90A00EFA38A /* PasswordInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6193B95B2A1BA90A00EFA38A /* PasswordInputs.swift */; };
 		61A721BB29DEAA55005E4384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721BA29DEAA55005E4384 /* AppDelegate.swift */; };
 		61A721BD29DEAA55005E4384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721BC29DEAA55005E4384 /* SceneDelegate.swift */; };
 		61A721BF29DEAA55005E4384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A721BE29DEAA55005E4384 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		6193B9552A0D074900EFA38A /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		6193B9572A1B7C9B00EFA38A /* ChangePasswordViewCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewCommands.swift; sourceTree = "<group>"; };
 		6193B9592A1B7D8600EFA38A /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		6193B95B2A1BA90A00EFA38A /* PasswordInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputs.swift; sourceTree = "<group>"; };
 		61A721B729DEAA55005E4384 /* Refactoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Refactoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A721BA29DEAA55005E4384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A721BC29DEAA55005E4384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				61A721C529DEAA56005E4384 /* LaunchScreen.storyboard */,
 				61A721C829DEAA56005E4384 /* Info.plist */,
 				6193B9592A1B7D8600EFA38A /* ChangePasswordPresenter.swift */,
+				6193B95B2A1BA90A00EFA38A /* PasswordInputs.swift */,
 			);
 			path = Refactoring;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				6193B95A2A1B7D8600EFA38A /* ChangePasswordPresenter.swift in Sources */,
 				6193B9562A0D074900EFA38A /* ChangePasswordViewModel.swift in Sources */,
 				61A721BB29DEAA55005E4384 /* AppDelegate.swift in Sources */,
+				6193B95C2A1BA90A00EFA38A /* PasswordInputs.swift in Sources */,
 				6193B9582A1B7C9B00EFA38A /* ChangePasswordViewCommands.swift in Sources */,
 				61A721BD29DEAA55005E4384 /* SceneDelegate.swift in Sources */,
 				610C9EAC29DECC42003B9477 /* ChangePasswordViewController.swift in Sources */,
